@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Applegate Plumbing & Heating | Seal Beach Plumbing Since 1953</title>
+  <meta name="description" content="Applegate Plumbing & Heating — Seal Beach's trusted family-owned plumber since 1953. Voted Best of Seal Beach 2016–2019. Call (562) 431-6721, available 7 days a week.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Applegate Plumbing & Heating | Seal Beach Plumbing Since 1953">
+  <meta property="og:description" content="70 years of trusted plumbing service in Seal Beach. Repairs, repipes, water heaters, garbage disposals & more. Call (562) 431-6721.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://applegate-plumbing-site.vercel.app/">
+  <meta property="og:image" content="https://applegate-plumbing-site.vercel.app/assets/images/hero.webp">
+  <meta property="og:image:width" content="800">
+  <meta property="og:image:height" content="931">
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.ico">
+
+  <!-- Preload LCP image -->
+  <link rel="preload" as="image" href="assets/images/hero.webp" fetchpriority="high">
+
+  <!-- Google Fonts — non-render-blocking -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap"></noscript>
+
+  <!-- Inline critical CSS -->
+  <style>
+    /* Critical: reset + base */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: #1a1a1a;
+      background: #fff;
+      line-height: 1.6;
+    }
+
+    /* Critical: nav */
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(26, 58, 92, 0.97);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    nav {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.9rem 1.5rem;
+    }
+    .nav-logo img { height: 44px; width: auto; display: block; }
+    .nav-phone {
+      color: #e8a020; font-weight: 600; font-size: 1.05rem;
+      text-decoration: none; letter-spacing: 0.01em;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: #fff; text-decoration: none; font-size: 0.9rem;
+      font-weight: 500; letter-spacing: 0.03em; text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #e8a020; }
+    .hamburger {
+      display: none; background: none; border: none; cursor: pointer;
+      padding: 4px; color: #fff;
+    }
+    .hamburger svg { width: 28px; height: 28px; }
+
+    /* Critical: hero */
+    .hero {
+      min-height: 100svh;
+      display: grid; grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding-top: 74px;
+      background: #1a3a5c;
+    }
+    .hero-content {
+      padding: 4rem 2rem 4rem 5vw;
+      color: #fff;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: #e8a020; color: #1a3a5c;
+      font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.3rem 0.9rem; border-radius: 2rem;
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .hero-tagline {
+      font-size: 1.05rem; color: #b8cfe0;
+      margin-bottom: 2rem; max-width: 500px;
+    }
+    .hero-cta {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: #e8a020; color: #1a3a5c;
+      padding: 0.85rem 1.8rem; border-radius: 4px;
+      font-weight: 700; font-size: 1rem;
+      text-decoration: none; display: inline-block;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: #d4911a; transform: translateY(-1px); }
+    .btn-outline {
+      border: 2px solid rgba(255,255,255,0.5); color: #fff;
+      padding: 0.85rem 1.8rem; border-radius: 4px;
+      font-weight: 600; font-size: 1rem;
+      text-decoration: none; display: inline-block;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+
+    .hero-image {
+      height: 100svh;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero-image img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center top;
+      display: block;
+    }
+
+    /* Mobile nav */
+    .mobile-nav {
+      display: none;
+      position: fixed; inset: 0; z-index: 99;
+      background: #1a3a5c;
+      flex-direction: column; align-items: center; justify-content: center;
+      gap: 2rem;
+    }
+    .mobile-nav[aria-hidden="false"] { display: flex; }
+    .mobile-nav a {
+      color: #fff; text-decoration: none;
+      font-size: 1.5rem; font-weight: 600;
+    }
+    .mobile-nav .close-btn {
+      position: absolute; top: 1rem; right: 1.5rem;
+      background: none; border: none; color: #fff;
+      font-size: 2rem; cursor: pointer; line-height: 1;
+    }
+  </style>
+
+  <!-- Full stylesheet — deferred -->
+  <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="css/style.css"></noscript>
+
+  <!-- Animations — deferred -->
+  <link rel="stylesheet" href="css/animations.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="css/animations.css"></noscript>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Plumber",
+    "name": "Applegate Plumbing & Heating",
+    "url": "https://applegate-plumbing-site.vercel.app/",
+    "image": "https://applegate-plumbing-site.vercel.app/assets/images/hero.webp",
+    "logo": "https://applegate-plumbing-site.vercel.app/assets/images/logo.webp",
+    "telephone": "+15624316721",
+    "email": "mail@applegateplumbing.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "311 Main Street, Suite 14-A",
+      "addressLocality": "Seal Beach",
+      "addressRegion": "CA",
+      "postalCode": "90740",
+      "addressCountry": "US"
+    },
+    "openingHours": "Mo-Su",
+    "areaServed": ["Seal Beach", "Huntington Beach", "Long Beach", "Los Alamitos", "Garden Grove", "Cypress"],
+    "foundingDate": "1953",
+    "description": "Family-owned plumbing and heating company serving Seal Beach and surrounding areas since 1953.",
+    "sameAs": [
+      "https://www.facebook.com/applegateplumbinginc",
+      "https://www.yelp.com/biz/applegate-plumbing-and-heating-seal-beach"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <nav role="navigation" aria-label="Main navigation">
+    <a class="nav-logo" href="#" aria-label="Applegate Plumbing & Heating home">
+      <img src="assets/images/logo.webp" alt="Applegate Plumbing & Heating logo" width="80" height="44">
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="nav-phone" href="tel:+15624316721" aria-label="Call us at (562) 431-6721">(562) 431-6721</a>
+    <button class="hamburger" aria-label="Open navigation menu" aria-controls="mobile-nav" aria-expanded="false" id="hamburger-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </nav>
+</header>
+
+<!-- Mobile nav -->
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true" role="dialog" aria-label="Navigation menu">
+  <button class="close-btn" id="close-nav-btn" aria-label="Close navigation menu">&times;</button>
+  <a href="#services" tabindex="-1">Services</a>
+  <a href="#about" tabindex="-1">About</a>
+  <a href="#testimonials" tabindex="-1">Reviews</a>
+  <a href="#contact" tabindex="-1">Contact</a>
+  <a href="tel:+15624316721" tabindex="-1" style="color:#e8a020;">(562) 431-6721</a>
+</div>
+
+<main>
+
+<!-- Hero -->
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="hero-content">
+    <span class="hero-badge">Seal Beach Plumbing Since 1953</span>
+    <h1 id="hero-heading">Trusted Plumbing & Heating for Over 70 Years</h1>
+    <p class="hero-tagline">Family-owned and locally operated, serving Seal Beach, Huntington Beach, Long Beach, and surrounding communities — 7 days a week.</p>
+    <div class="hero-cta">
+      <a href="tel:+15624316721" class="btn-primary">Call (562) 431-6721</a>
+      <a href="#services" class="btn-outline">Our Services</a>
+    </div>
+    <div class="hero-awards" aria-label="Awards">
+      <picture>
+        <source srcset="assets/images/best-of-sb-2016.webp" type="image/webp">
+        <img src="assets/images/best-of-sb-2016.png" alt="Voted Best of Seal Beach 2016" width="60" height="54" loading="lazy">
+      </picture>
+      <picture>
+        <source srcset="assets/images/best-of-sb-2017.webp" type="image/webp">
+        <img src="assets/images/best-of-sb-2017.png" alt="Voted Best of Seal Beach 2017" width="60" height="54" loading="lazy">
+      </picture>
+      <picture>
+        <source srcset="assets/images/best-of-sb-2018.webp" type="image/webp">
+        <img src="assets/images/best-of-sb-2018.png" alt="Voted Best of Seal Beach 2018" width="60" height="54" loading="lazy">
+      </picture>
+      <picture>
+        <source srcset="assets/images/best-of-sb-2019.webp" type="image/webp">
+        <img src="assets/images/best-of-sb-2019.png" alt="Voted Best of Seal Beach 2019" width="60" height="54" loading="lazy">
+      </picture>
+    </div>
+  </div>
+  <div class="hero-image" aria-hidden="true">
+    <picture>
+      <source srcset="assets/images/hero.webp" type="image/webp">
+      <img src="assets/images/hero-image.jpg" alt="" width="800" height="931" fetchpriority="high">
+    </picture>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="services" id="services" aria-labelledby="services-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2 id="services-heading">Our Services</h2>
+      <p>From routine maintenance to full-service contracting — we handle it all.</p>
+    </div>
+    <div class="services-grid">
+      <article class="service-card reveal" style="--delay:0.05s">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 40V20l16-12 16 12v20"/>
+            <path d="M16 40v-12h16v12"/>
+          </svg>
+        </div>
+        <h3>Repairs</h3>
+        <p>Fast, reliable repairs for leaks, clogs, and plumbing emergencies throughout Seal Beach and surrounding areas.</p>
+      </article>
+      <article class="service-card reveal" style="--delay:0.10s">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 24 Q24 8 38 24"/>
+            <path d="M10 24v12h28V24"/>
+            <line x1="24" y1="36" x2="24" y2="44"/>
+          </svg>
+        </div>
+        <h3>Repipes</h3>
+        <p>Full home repipe services using quality materials for lasting performance and peace of mind.</p>
+      </article>
+      <article class="service-card reveal" style="--delay:0.15s">
+        <div class="service-icon" aria-hidden="true">
+          <picture>
+            <source srcset="assets/images/wall-heater.webp" type="image/webp">
+            <img src="assets/images/wall-heater.jpg" alt="Water heater installation" width="207" height="155" loading="lazy">
+          </picture>
+        </div>
+        <h3>Water Heaters</h3>
+        <p>Water heater installation, repair, and replacement. Including Williams wall heaters and tankless systems.</p>
+      </article>
+      <article class="service-card reveal" style="--delay:0.20s">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="24" cy="28" r="10"/>
+            <path d="M24 18V8"/>
+            <path d="M18 22l-8-8"/>
+            <path d="M30 22l8-8"/>
+          </svg>
+        </div>
+        <h3>Garbage Disposals</h3>
+        <p>Garbage disposal installation and repair for kitchens across our service area.</p>
+      </article>
+      <article class="service-card reveal" style="--delay:0.25s">
+        <div class="service-icon" aria-hidden="true">
+          <picture>
+            <source srcset="assets/images/pfister-faucet.webp" type="image/webp">
+            <img src="assets/images/pfister-faucet.jpg" alt="Faucet installation" width="250" height="155" loading="lazy">
+          </picture>
+        </div>
+        <h3>Full Service Contracting</h3>
+        <p>Complete plumbing contracting for new construction, remodels, and full-scale plumbing projects.</p>
+      </article>
+      <article class="service-card reveal" style="--delay:0.30s">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="8" y="16" width="32" height="24" rx="2"/>
+            <path d="M16 16v-4a8 8 0 0116 0v4"/>
+            <line x1="24" y1="28" x2="24" y2="32"/>
+          </svg>
+        </div>
+        <h3>Plumbing Design & Installation</h3>
+        <p>Expert plumbing design and installation for kitchens, bathrooms, and commercial projects.</p>
+      </article>
+      <article class="service-card reveal" style="--delay:0.35s">
+        <div class="service-icon" aria-hidden="true">
+          <picture>
+            <source srcset="assets/images/kitchen-faucet.webp" type="image/webp">
+            <img src="assets/images/kitchen-faucet.jpg" alt="Kitchen plumbing maintenance" width="250" height="155" loading="lazy">
+          </picture>
+        </div>
+        <h3>General Plumbing Maintenance</h3>
+        <p>Preventive maintenance and inspections to keep your plumbing running smoothly year-round.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="about" id="about" aria-labelledby="about-heading">
+  <div class="container about-grid">
+    <div class="about-content reveal">
+      <h2 id="about-heading">Serving Seal Beach Since 1953</h2>
+      <p>Founded in 1953, Applegate Plumbing &amp; Heating is a family-owned business that has provided over 70 years of trusted local service. Our mission is simple: deliver the finest quality and guaranteed service available, along with expert plumbing design, installation, and ongoing general plumbing care.</p>
+      <p>We serve Seal Beach, Huntington Beach, Long Beach, Los Alamitos, Garden Grove, and Cypress — and we're available 7 days a week.</p>
+      <div class="about-awards" aria-label="Best of Seal Beach awards">
+        <picture>
+          <source srcset="assets/images/best-of-sb-2016.webp" type="image/webp">
+          <img src="assets/images/best-of-sb-2016.png" alt="Voted Best of Seal Beach 2016" width="80" height="72" loading="lazy">
+        </picture>
+        <picture>
+          <source srcset="assets/images/best-of-sb-2017.webp" type="image/webp">
+          <img src="assets/images/best-of-sb-2017.png" alt="Voted Best of Seal Beach 2017" width="80" height="72" loading="lazy">
+        </picture>
+        <picture>
+          <source srcset="assets/images/best-of-sb-2018.webp" type="image/webp">
+          <img src="assets/images/best-of-sb-2018.png" alt="Voted Best of Seal Beach 2018" width="80" height="72" loading="lazy">
+        </picture>
+        <picture>
+          <source srcset="assets/images/best-of-sb-2019.webp" type="image/webp">
+          <img src="assets/images/best-of-sb-2019.png" alt="Voted Best of Seal Beach 2019" width="80" height="72" loading="lazy">
+        </picture>
+      </div>
+      <a href="tel:+15624316721" class="btn-primary">Call Us Today</a>
+    </div>
+    <div class="about-image reveal">
+      <picture>
+        <source srcset="assets/images/hero.webp" type="image/webp">
+        <img src="assets/images/hero-image.jpg" alt="Applegate Plumbing & Heating team at work" width="800" height="931" loading="lazy">
+      </picture>
+    </div>
+  </div>
+</section>
+
+<!-- Service Areas -->
+<section class="service-areas" aria-labelledby="areas-heading">
+  <div class="container">
+    <h2 id="areas-heading" class="reveal">Service Areas</h2>
+    <ul class="areas-list" role="list">
+      <li class="reveal" style="--delay:0.05s">Seal Beach</li>
+      <li class="reveal" style="--delay:0.10s">Huntington Beach</li>
+      <li class="reveal" style="--delay:0.15s">Long Beach</li>
+      <li class="reveal" style="--delay:0.20s">Los Alamitos</li>
+      <li class="reveal" style="--delay:0.25s">Garden Grove</li>
+      <li class="reveal" style="--delay:0.30s">Cypress</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials" id="testimonials" aria-labelledby="testimonials-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2 id="testimonials-heading">What Our Customers Say</h2>
+    </div>
+    <div class="testimonials-grid">
+      <blockquote class="testimonial-card reveal" style="--delay:0.05s">
+        <p>"Thank you all for always being there for us. We appreciate you and everything you do for us. We are so lucky to have such friendly, honest people to rely on!"</p>
+        <footer><cite>— Tim &amp; Jan, Rossmoor, CA</cite></footer>
+      </blockquote>
+      <blockquote class="testimonial-card reveal" style="--delay:0.10s">
+        <p>"Seal Beach Customer service at it's finest! They sent the crew out right away and had our mainline cleared out and working in minutes! Highly recommended!"</p>
+        <footer><cite>— Joe, Seal Beach</cite></footer>
+      </blockquote>
+      <blockquote class="testimonial-card reveal" style="--delay:0.15s">
+        <p>"Thank you, thank you, a thousand times to Yvonne for putting up with my phone calls, to Andy and Thomas for all your hard work, you're the best."</p>
+        <footer><cite>— Deborah, Long Beach</cite></footer>
+      </blockquote>
+      <blockquote class="testimonial-card reveal" style="--delay:0.20s">
+        <p>"Thank you for your continued service to our family and community. Your plumber was very courteous and cleaned up after he was through."</p>
+        <footer><cite>— Jerry, Seal Beach</cite></footer>
+      </blockquote>
+      <blockquote class="testimonial-card reveal" style="--delay:0.25s">
+        <p>"Thanks Yvonne &amp; Andy for your help. You're the best!"</p>
+        <footer><cite>— Pat G., Seal Beach</cite></footer>
+      </blockquote>
+      <blockquote class="testimonial-card reveal" style="--delay:0.30s">
+        <p>"Thank you for your prompt and professional service."</p>
+        <footer><cite>— Fran, Seal Beach</cite></footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact" aria-labelledby="contact-heading">
+  <div class="container contact-grid">
+    <div class="contact-info reveal">
+      <h2 id="contact-heading">Get In Touch</h2>
+      <p>We're available 7 days a week. Call us or send a message and we'll get back to you promptly.</p>
+      <ul class="contact-details" role="list">
+        <li>
+          <span aria-hidden="true">📞</span>
+          <a href="tel:+15624316721">(562) 431-6721</a>
+        </li>
+        <li>
+          <span aria-hidden="true">✉️</span>
+          <a href="mailto:mail@applegateplumbing.com">mail@applegateplumbing.com</a>
+        </li>
+        <li>
+          <span aria-hidden="true">📍</span>
+          <address>311 Main Street, Suite 14-A<br>Seal Beach, CA 90740</address>
+        </li>
+        <li>
+          <span aria-hidden="true">🕐</span>
+          <span>Available 7 days a week</span>
+        </li>
+      </ul>
+      <div class="contact-social">
+        <a href="https://www.facebook.com/applegateplumbinginc" rel="noopener noreferrer" target="_blank" aria-label="Applegate Plumbing on Facebook">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          Facebook
+        </a>
+        <a href="https://www.yelp.com/biz/applegate-plumbing-and-heating-seal-beach" rel="noopener noreferrer" target="_blank" aria-label="Applegate Plumbing on Yelp">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M21.111 18.226c-.141.969-2.119 3.483-3.029 3.847-.311.124-.611.094-.85-.09-.154-.12-.314-.365-2.447-3.827l-.633-1.032a.84.84 0 01.123-1.014.868.868 0 011.038-.137l1.049.62c3.443 2.013 3.693 2.171 3.836 2.315.266.258.324.635.197 1.045l-.284-.727zm-11.12 1.671c0 1.008-.012 1.97-.09 2.277-.195.762-1.26 2.198-2.24 2.646-.357.162-.7.165-.975-.06-.183-.15-.297-.373-1.576-2.695l-.43-.776a.86.86 0 01.098-1.026.858.858 0 011.024-.164l.85.457c.047.025.094.05.14.076V10.24a.898.898 0 011.021-.87.905.905 0 01.764.905v9.622zm-6.85-6.96c-.864.454-1.692.86-1.984.888-.771.075-2.44-.722-2.9-1.626-.163-.32-.161-.648.035-.906.128-.167.366-.298 3.626-1.621l1.107-.446a.87.87 0 011.013.378.869.869 0 01-.065 1.053l-.706.64-.126.64zm18.025-4.255c.328.892-.572 3.65-1.238 4.359-.228.242-.515.34-.793.272-.181-.044-.407-.17-3.215-2.432l-.903-.741a.858.858 0 01-.156-1.024.867.867 0 01.969-.438l1.143.353c3.75 1.158 3.992 1.247 4.193 1.651zm-8.22-6.71c1.11-.086 3.73.895 4.175 1.8.156.313.14.638-.06.893-.13.167-.349.282-3.437 1.626l-1.017.44a.862.862 0 01-1.017-.361.858.858 0 01.06-1.016l.724-.84c.047-.055.095-.11.14-.166V2.84a.883.883 0 01.741-.867.89.89 0 01.691.999z"/></svg>
+          Yelp
+        </a>
+      </div>
+    </div>
+    <div class="contact-form reveal">
+      <form action="https://formspree.io/f/xyzformspree" method="POST" novalidate>
+        <h3>Send Us a Message</h3>
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" required autocomplete="name" placeholder="John Smith">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="(562) 555-1234">
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required autocomplete="email" placeholder="john@example.com">
+        </div>
+        <div class="form-group">
+          <label for="service">Service Needed</label>
+          <select id="service" name="service">
+            <option value="">Select a service...</option>
+            <option>Repairs</option>
+            <option>Repipes</option>
+            <option>Water Heater</option>
+            <option>Garbage Disposal</option>
+            <option>Full Service Contracting</option>
+            <option>Plumbing Design &amp; Installation</option>
+            <option>General Plumbing Maintenance</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" placeholder="Describe your plumbing issue or project..."></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%;border:none;cursor:pointer;font-size:1rem;">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <img src="assets/images/logo.webp" alt="Applegate Plumbing & Heating" width="80" height="44" loading="lazy">
+      <p>Seal Beach Plumbing Since 1953</p>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul role="list">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p><a href="tel:+15624316721">(562) 431-6721</a></p>
+      <p><a href="mailto:mail@applegateplumbing.com">mail@applegateplumbing.com</a></p>
+      <address>311 Main Street, Suite 14-A<br>Seal Beach, CA 90740</address>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Applegate Plumbing, Inc. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>

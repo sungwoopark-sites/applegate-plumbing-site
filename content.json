@@ -1,0 +1,109 @@
+{
+  "business_name": "Applegate Plumbing & Heating",
+  "tagline": "Seal Beach Plumbing Since 1953",
+  "category": "plumber",
+  "city": "Seal Beach, CA",
+  "phone": "(562) 431-6721",
+  "email": "mail@applegateplumbing.com",
+  "address": "311 Main Street, Suite 14-A, Seal Beach, CA 90740",
+  "hours": "Available 7 days a week",
+  "founded": "1953",
+  "service_areas": ["Seal Beach", "Huntington Beach", "Long Beach", "Los Alamitos", "Garden Grove", "Cypress"],
+  "services": [
+    "Repairs",
+    "Repipes",
+    "Water Heaters",
+    "Garbage Disposals",
+    "Full Service Contracting",
+    "Expert Plumbing Design and Installation",
+    "General Plumbing Maintenance"
+  ],
+  "about_text": "Founded in 1953, Applegate Plumbing & Heating is a family-owned business that has provided 70 years of local service. Our mission emphasizes the finest quality and guaranteed service available, along with expert plumbing design, installation and ongoing general plumbing care.",
+  "awards": [
+    "Voted Best of Seal Beach 2016",
+    "Voted Best of Seal Beach 2017",
+    "Voted Best of Seal Beach 2018",
+    "Voted Best of Seal Beach 2019"
+  ],
+  "testimonials": [
+    {
+      "text": "Thank you all for always being there for us. We appreciate you and everything you do for us. We are so lucky to have such friendly, honest people to rely on!",
+      "author": "Tim & Jan",
+      "location": "Rossmoor, CA"
+    },
+    {
+      "text": "Seal Beach Customer service at it's finest! They sent the crew out right away and had our mainline cleared out and working in minutes! Highly recommended!",
+      "author": "Joe",
+      "location": "Seal Beach"
+    },
+    {
+      "text": "We are 100% happy with the result btw. (I left that out previously thinking it went without saying.)",
+      "author": "Russ",
+      "location": "Lakewood"
+    },
+    {
+      "text": "Thanks for your prompt and professional service.",
+      "author": "Fran",
+      "location": "Seal Beach"
+    },
+    {
+      "text": "Thanks Yvonne & Andy for your help. You're the best!",
+      "author": "Pat G.",
+      "location": "Seal Beach"
+    },
+    {
+      "text": "Thank you for your prompt service!",
+      "author": "Beverly",
+      "location": "Seal Beach"
+    },
+    {
+      "text": "Your crew did a great job!",
+      "author": "Dale",
+      "location": "Seal Beach"
+    },
+    {
+      "text": "Thank you, thank you, a thousand times to Yvonne for putting up with my phone calls, to Andy and Thomas for all your hard work, you're the best.",
+      "author": "Deborah",
+      "location": "Long Beach"
+    },
+    {
+      "text": "Thank you for your continued service to our family and community. Your plumber was very courteous and cleaned up after he was through.",
+      "author": "Jerry",
+      "location": "Seal Beach"
+    }
+  ],
+  "social_links": {
+    "facebook": "https://www.facebook.com/applegateplumbinginc",
+    "yelp": "https://www.yelp.com/biz/applegate-plumbing-and-heating-seal-beach"
+  },
+  "brand_colors": {
+    "primary": "#1a3a5c",
+    "secondary": "#e8a020",
+    "accent": "#2d6fa8"
+  },
+  "original_site_url": "https://applegateplumbing.com/",
+  "images_downloaded": [
+    "assets/images/logo-main.png",
+    "assets/images/logo.webp",
+    "assets/images/hero-image.jpg",
+    "assets/images/hero.webp",
+    "assets/images/pfister-faucet.jpg",
+    "assets/images/pfister-faucet.webp",
+    "assets/images/kitchen-faucet.jpg",
+    "assets/images/kitchen-faucet.webp",
+    "assets/images/toilet.jpg",
+    "assets/images/toilet.webp",
+    "assets/images/wall-heater.jpg",
+    "assets/images/wall-heater.webp",
+    "assets/images/payments.png",
+    "assets/images/best-of-sb-2016.png",
+    "assets/images/best-of-sb-2016.webp",
+    "assets/images/best-of-sb-2017.png",
+    "assets/images/best-of-sb-2017.webp",
+    "assets/images/best-of-sb-2018.png",
+    "assets/images/best-of-sb-2018.webp",
+    "assets/images/best-of-sb-2019.png",
+    "assets/images/best-of-sb-2019.webp",
+    "assets/images/favicon.ico"
+  ]
+}
