@@ -428,11 +428,12 @@ footer {
   color: rgba(255,255,255,0.7);
 }
 .footer-bottom {
+  background: var(--blue-dark); /* explicit bg for Lighthouse contrast detection */
   border-top: 1px solid rgba(255,255,255,0.1);
   text-align: center;
   padding: 1.2rem 0;
   font-size: 0.82rem;
-  color: rgba(255,255,255,0.45);
+  color: rgba(255,255,255,0.75); /* increased from 0.45 — passes WCAG AA on #1a3a5c */
 }
 @media (max-width: 768px) {
   .footer-grid { grid-template-columns: 1fr 1fr; }

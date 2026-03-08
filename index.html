@@ -131,6 +131,22 @@
       display: block;
     }
 
+    /* Hero animation — defined in critical CSS to prevent CLS when animations.css loads async */
+    @keyframes heroFadeIn {
+      from { opacity: 0; transform: translateX(-24px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    .hero-content { animation: heroFadeIn 0.8s ease 0.1s both; }
+    /* Reveal initial state — prevent CLS from async animations.css */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    /* Mobile hero responsive — in critical CSS to prevent CLS from async style.css */
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-content { padding: 6rem 1.5rem 2rem; order: 1; }
+      .hero-image { height: 55vw; min-height: 240px; order: 0; }
+    }
+
     /* Mobile nav */
     .mobile-nav {
       display: none;
